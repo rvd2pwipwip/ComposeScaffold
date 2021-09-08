@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.sp
 import com.hdesrosiers.composescaffold.ui.theme.ComposeScaffoldTheme
 import kotlinx.coroutines.launch
 
+//https://alexzh.com/jetpack-compose-layouts/
+
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
