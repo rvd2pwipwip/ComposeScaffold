@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -217,9 +220,21 @@ fun BackdropDemo() {
       LazyColumn(
         modifier = Modifier.fillMaxSize()
       ) {
-        itemsIndexed(menuItems) { i, item ->
+//        items(count = menuItems.size) {
+//          menuItems.forEach {
+//            ListItem(
+//              text = { Text(text = it) },
+//              modifier = Modifier.clickable {
+//                selectedItem.value = it
+//                scope.launch { scaffoldState.conceal() }
+//              }
+//            )
+//          }
+//        }
+
+        itemsIndexed(items = menuItems) { _, item ->
           ListItem(
-            text = { Text(text = menuItems[i]) },
+            text = { Text(text = item) },
             modifier = Modifier.clickable {
               selectedItem.value = item
               scope.launch { scaffoldState.conceal() }
@@ -242,6 +257,7 @@ fun BackdropDemo() {
     }
   )
 }
+
 
 
 
